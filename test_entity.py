@@ -4,7 +4,7 @@ import entity
 class TestEntity(unittest.TestCase):
     # creates the same entity for every test, resets changes from previous ones
     def setUp(self):
-        self.entity = entity.Entity("test", 0, 0)
+        self.entity = entity.Entity("test", 0, 0, 0)
 
     def test_get_name(self):
         self.assertEqual(self.entity.get_name(), "test")
@@ -26,6 +26,14 @@ class TestEntity(unittest.TestCase):
     def test_set_attack(self):
         self.entity.set_attack(1)
         self.assertEqual(self.entity.get_attack(), 1)
+
+    def test_get_physical_resistance(self):
+        self.assertEqual(self.entity.get_physical_resistance(), 0)
+
+    def test_set_physical_resistance(self):
+        self.entity.set_physical_resistance(1)
+        self.assertEqual(self.entity.get_physical_resistance(), 1)
+    
 
 if __name__ == '__main__':
     unittest.main()
